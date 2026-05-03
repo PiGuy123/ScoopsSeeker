@@ -1,0 +1,67 @@
+{
+  "name": "IceCreamVan",
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string",
+      "description": "Name of the ice cream business"
+    },
+    "driver_name": {
+      "type": "string",
+      "description": "Name of the driver"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "van_photo_url": {
+      "type": "string",
+      "description": "Photo of the ice cream van for verification"
+    },
+    "license_photo_url": {
+      "type": "string",
+      "description": "Photo of street trading license or food hygiene certificate"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Admin verification status"
+    },
+    "rejection_reason": {
+      "type": "string",
+      "description": "Reason for rejection if applicable"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the van is currently sharing location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Current latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Current longitude"
+    },
+    "location_updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the location was last updated"
+    },
+    "specialties": {
+      "type": "string",
+      "description": "What they sell (e.g. soft serve, gelato, etc.)"
+    }
+  },
+  "required": [
+    "business_name",
+    "driver_name",
+    "van_photo_url"
+  ]
+}
